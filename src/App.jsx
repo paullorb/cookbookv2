@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import { createClient } from "contentful";
+import Navbar from "./components/Navbar";
 import { NavLink, Route, Routes } from "react-router-dom";
 import NavCategory from "./components/NavCategory";
 import AllRecipes from "./components/AllRecipes";
@@ -27,9 +28,9 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <h1>Cookbookv2</h1>
       <br />
-
       <NavCategory />
       <Routes>
         <Route path="/AllRecipes" element={<AllRecipes />} />
@@ -42,6 +43,7 @@ function App() {
 export default App;
 
 
+
 // TO DO
 //_________________________________________
 //                                         |
@@ -50,4 +52,5 @@ export default App;
 // add description                         |
 // format instructions and ingredients     |
 //_________________________________________|
+
 

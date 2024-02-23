@@ -1,3 +1,10 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .AllCardsContainer {
   display: flex;
   flex-wrap: wrap;
@@ -44,3 +51,4 @@
   justify-content: space-around;
   min-width: 160px;
 }
+
