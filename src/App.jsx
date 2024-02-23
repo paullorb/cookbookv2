@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { createClient } from "contentful";
 import Navbar from "./components/Navbar";
+import { NavLink, Route, Routes } from "react-router-dom";
+import NavCategory from "./components/NavCategory";
+import AllRecipes from "./components/AllRecipes";
+import Footer from "./components/Footer";
+
 function App() {
   const [recipes, setRecipes] = useState([]);
 
@@ -20,28 +25,32 @@ function App() {
 
     getRecipes();
   }, []);
+
   return (
     <>
       <Navbar />
       <h1>Cookbookv2</h1>
       <br />
-      {recipes.map((recipe) => (
-        <div key={recipe.sys.id}>
-          <h1>{recipe.fields.recipeTitle}</h1>
-          <img
-            style={{ width: "200px", height: "200px" }}
-            src={recipe.fields.recipePicture.fields.file.url}
-            alt={recipe.fields.recipePicture.fields.file.fileName}
-          />
-          {recipe.fields.ingredients.map((el, index) => (
-            <ul key={index}>
-              <li>{el}</li>
-            </ul>
-          ))}
-        </div>
-      ))}
+      <NavCategory />
+      <Routes>
+        <Route path="/AllRecipes" element={<AllRecipes />} />
+      </Routes>
+      <Footer />
     </>
   );
 }
 
 export default App;
+
+
+
+// TO DO
+//_________________________________________
+//                                         |
+// we need prep time for recipes           |
+// remove alternative names from title     |
+// add description                         |
+// format instructions and ingredients     |
+//_________________________________________|
+
+

@@ -1,0 +1,95 @@
+.footer {
+  background-color: #e8d6be;
+  color: #0f0e0e;
+  padding: 40px 20px;
+}
+
+.fcontainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.fleftSection {
+  flex: 1;
+  box-sizing: border-box;
+  max-width: 250px;
+}
+
+.flogoContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.flogo {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.flogoText {
+  font-size: 20px;
+}
+
+.fcontainerdesc {
+  display: flex;
+  box-sizing: border-box;
+  text-align: start;
+  /* text-indent: 1rem; */
+}
+
+.fdescription {
+  margin-bottom: 20px;
+}
+
+.fsocialIcons {
+  display: flex;
+}
+
+.fsocialIcon {
+  color: #95745b;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.fsocialIcon:hover {
+  color: #361e12; /* Change color on hover */
+}
+
+.frightSection {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 900px;
+  margin-top: 4.5rem;
+}
+
+.flinksColumn {
+  margin-right: 40px;
+}
+
+.fpexploreadmin {
+  font-weight: 600;
+  text-align: start;
+}
+
+.flink {
+  color: #111010;
+  text-align: left;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.flink:hover {
+  text-decoration: none;
+  transform: translateX(10px); /* Move the link 5px to the right on hover */
+  color: inherit;
+}
+
+.fcopyRight {
+  text-align: center;
+  margin-top: 20px;
+}
