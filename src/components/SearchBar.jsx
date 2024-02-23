@@ -4,21 +4,21 @@ import { FaSearch } from "react-icons/fa";
 
 const SearchBar = () => {
   const [input, setInput] = useState("");
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
 
   return (
-    <div>
-      <form className={`${styles.form}`}>
-        <div className={`${styles.inputContainer}`}>
-          <FaSearch />
-          <input
-            onChange={(e) => setInput(e.target.value)}
-            className={`${styles.input}`}
-            type="text"
-            value={input}
-          />
-        </div>
+    <div className={`${styles.inputContainer}`}>
+      <form onSubmit={submitHandler} className={`${styles.form}`}>
+        <input
+          onChange={(e) => setInput(e.target.value)}
+          className={`${styles.input}`}
+          type="text"
+          value={input}
+        />
+        <FaSearch />
       </form>
-      <h1>{input}</h1>
     </div>
   );
 };
