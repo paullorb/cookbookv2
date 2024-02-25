@@ -35,7 +35,7 @@ function App() {
       <NavCategory />
       <Routes>
         <Route path="/AllRecipes" element={<AllRecipes />} />
-        <Route path="/Searched/:search" element={<Searched />} />
+        <Route path="/Searched/:query" element={<Searched />} />
       </Routes>
       <Footer />
     </>
