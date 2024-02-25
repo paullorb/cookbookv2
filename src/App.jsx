@@ -7,6 +7,7 @@ import { NavLink, Route, Routes } from "react-router-dom";
 import NavCategory from "./components/NavCategory";
 import AllRecipes from "./components/AllRecipes";
 import Footer from "./components/Footer";
+import Searched from "./components/Searched";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -34,6 +35,7 @@ function App() {
       <NavCategory />
       <Routes>
         <Route path="/AllRecipes" element={<AllRecipes />} />
+        <Route path="/Searched/:query" element={<Searched />} />
       </Routes>
       <Footer />
     </>
@@ -41,8 +43,6 @@ function App() {
 }
 
 export default App;
-
-
 
 // TO DO
 //_________________________________________
@@ -52,5 +52,3 @@ export default App;
 // add description                         |
 // format instructions and ingredients     |
 //_________________________________________|
-
-

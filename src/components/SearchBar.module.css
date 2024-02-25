@@ -1,6 +1,5 @@
 .form {
     width: 100%;
-    margin: 0rem 20rem;
     position: relative;
 }
 
@@ -11,18 +10,21 @@
     color: #361e12;
     border-radius: 2rem;
     outline: none;
-    width: 50%;
-    margin: 1.5rem;
-}
+    width: 100%;
 
-svg {
-    position: absolute;
-    top: 50%;
-    left: 3%;
-    transform: translate(100%, -50%);
-    color: #361e12;
+
+
 }
 
 .inputContainer {
     width: 100%;
+}
+
+.inputContainer svg {
+    width: 2rem;
+    position: absolute;
+    top: 50%;
+    left: -3%;
+    transform: translate(100%, -50%);
+    color: #361e12;
 }

@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 import { FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [input, setInput] = useState("");
+  const navigate = useNavigate();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    navigate("/searched/" + input);
+  };
 
   return (
-    <div>
-      <form className={`${styles.form}`}>
-        <div className={`${styles.inputContainer}`}>
-          <FaSearch />
-          <input
-            onChange={(e) => setInput(e.target.value)}
-            className={`${styles.input}`}
-            type="text"
-            value={input}
-          />
-        </div>
+    <div className={`${styles.inputContainer}`}>
+      <form onSubmit={submitHandler} className={`${styles.form}`}>
+        <input
+          onChange={(e) => setInput(e.target.value)}
+          className={`${styles.input}`}
+          type="text"
+          value={input}
+        />
+        <FaSearch />
       </form>
-      <h1>{input}</h1>
     </div>
   );
 };
