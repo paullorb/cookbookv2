@@ -1,0 +1,69 @@
+.AnchorTag a {
+
+    position: relative;
+    margin-left: 9px;
+    padding: 8px;
+    align-items: center;
+    color: #361e12;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.AnchorTag a:hover {
+    color: #e8d6be;
+    transition: all ease 0.3s;
+}
+
+.w-inline-block {
+    max-width: 100%;
+    display: inline-block;
+}
+
+.rightNav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 3rem;
+    position: relative;
+    float: right;
+}
+
+.socialLinksWrapper {
+
+    display: flex;
+    margin-left: 24px;
+    justify-content: flex-end;
+    align-items: center;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+}
+
+.socialLinksWrapper a {
+    width: 30px;
+    max-width: 100%;
+    display: inline-block;
+}
+
+.socialLinksWrapper a {
+    width: 30px;
+    max-width: 100%;
+    display: inline-block;
+}
+
+.socialLinksWrapper svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    color: #361e12;
+}
+
+.socialLinksWrapper svg:hover {
+
+    color: #e8d6be;
+    transition: all ease 0.3s;
+}

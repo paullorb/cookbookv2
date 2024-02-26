@@ -1,0 +1,30 @@
+.form {
+    width: 100%;
+    position: relative;
+}
+
+.input {
+    border: none;
+    background: #e8d6be;
+    padding: 1rem 3rem;
+    color: #361e12;
+    border-radius: 2rem;
+    outline: none;
+    width: 100%;
+
+
+
+}
+
+.inputContainer {
+    width: 100%;
+}
+
+.inputContainer svg {
+    width: 2rem;
+    position: absolute;
+    top: 50%;
+    left: -3%;
+    transform: translate(100%, -50%);
+    color: #361e12;
+}

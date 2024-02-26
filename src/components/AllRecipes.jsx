@@ -1,27 +1,14 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "../App.css";
 import { createClient } from "contentful";
 import { NavLink } from "react-router-dom";
 import NavCategory from "./NavCategory";
+import { RecipesContext } from "../context/RecipesContext";
 
 function AllRecipes() {
-  const [recipes, setRecipes] = useState([]);
-
-  const client = createClient({
-    space: "mwoz8j7lspjq",
-    accessToken: "7d4TEO9tdvluAn_KIRYM_jcoyDImg9rZcuS4HxrGbuc",
-  });
-
-  useEffect(() => {
-    const getRecipes = async () => {
-      const entryItems = await client.getEntries();
-      setRecipes(entryItems.items);
-      console.log(entryItems.items);
-    };
-
-    getRecipes();
-  }, []);
+  const recipes = useContext(RecipesContext);
 
   return (
     <>
@@ -36,16 +23,27 @@ function AllRecipes() {
               />
               <div className="CardText">
                 <h3 className="CardHeaderTitle">{recipe.fields.recipeTitle}</h3>
-                <p>Description</p>
+                <p className="CardTextP">{recipe.fields.description}</p>
                 <div className="CardTextInfo">
-                  <h5>PrepTime</h5>
-                  <h5>{recipe.fields.category}</h5>
+                  <div className="PrepTimeContainer">
+                    <img
+                      src="timerbg.png"
+                      style={{ height: "2rem", width: "auto" }}
+                    />
+                    <h5 className="CardTextPrepTime">
+                      {recipe.fields.prepTime}
+                    </h5>
+                  </div>
+                  <p className={`CardCatBox${recipe.fields.category}`}>
+                    {recipe.fields.category}
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+      {/* <p>test</p> */}
     </>
   );
 }
@@ -55,8 +53,11 @@ export default AllRecipes;
 // TO DO
 //_________________________________________
 //                                         |
-// we need prep time for recipes           |
-// remove alternative names from title     |
-// add description                         |
-// format instructions and ingredients     |
+// we need prep time for recipes          ✓|
+// remove alternative names from title    ✓|
+// add description                        ✓|
+// format instructions and ingredients    ✓|
+// set up useContext                       |
+// set up useParams                        |
+// set up Single Recipes                   |
 //_________________________________________|
