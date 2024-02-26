@@ -14,6 +14,8 @@ import Breakfast from "./components/Breakfast";
 import Lunch from "./components/Lunch";
 import Dinner from "./components/Dinner";
 import Desserts from "./components/Desserts";
+import About from "./pages/About";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   // const [recipes, setRecipes] = useState([]);
