@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import "./App.css";
@@ -8,6 +9,7 @@ import NavCategory from "./components/NavCategory";
 import AllRecipes from "./components/AllRecipes";
 import Footer from "./components/Footer";
 import Searched from "./components/Searched";
+import Favorite from "./components/Favorite";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -37,6 +39,7 @@ function App() {
         <Route path="/AllRecipes" element={<AllRecipes />} />
         <Route path="/Searched/:query" element={<Searched />} />
       </Routes>
+      <Favorite />
       <Footer />
     </>
   );
