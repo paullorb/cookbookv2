@@ -41,7 +41,6 @@ function App() {
 
 export default App;
 
-
 // TO DO
 //_________________________________________
 //                                         |
@@ -50,4 +49,3 @@ export default App;
 // add description                         |
 // format instructions and ingredients     |
 //_________________________________________|
-

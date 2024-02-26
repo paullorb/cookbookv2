@@ -9,14 +9,10 @@ const Footer = () => {
         <div className={styles.fleftSection}>
           <div className={styles.flogoContainer}>
             <img
-              src="/path/to/logo.png"
+              src="./images/NimopaisLogo.png"
               alt="Nimopais Kitchen"
               className={styles.flogo}
             />
-            <p className={styles.flogoText}>
-              Nimopais <br />
-              Kitchen
-            </p>
           </div>
           <div className={styles.fcontainerdesc}>
             <p className={styles.fdescription}>
