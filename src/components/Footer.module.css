@@ -1,6 +1,6 @@
 .footer {
-  background-color: #e8d6be;
-  color: #0f0e0e;
+  background-color: #361e12;
+  color: #e8d6be;
   padding: 40px 20px;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .fsocialIcon:hover {
-  color: #361e12; /* Change color on hover */
+  color: #e8d6be; /* Change color on hover */
 }
 
 .frightSection {
@@ -76,7 +76,7 @@
 }
 
 .flink {
-  color: #111010;
+  color: #e8d6be;
   text-align: left;
   text-decoration: none;
   display: block;
