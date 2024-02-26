@@ -122,5 +122,106 @@
 }
 
 .active {
-  background-color: antiquewhite;
+  background-color: #aa723b;
+}
+
+.siReCaTitle {
+  margin-left: 11rem;
+  text-decoration: underline;
+  color: #361e12;
+  text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 3px;
+  font-size: 4rem;
+}
+
+.singleRecipeTitleCardContainer {
+  border: solid 3px #361e12;
+  background-color: #95745b80;
+  padding: 7rem 10rem;
+  border-radius: 30px;
+  margin-bottom: 2rem;
+}
+
+.singleRecipeCardContainer {
+  display: flex;
+  padding: 0rem 10rem;
+  border-radius: 30px;
+  text-shadow: rgba(139, 90, 16, 0.5) 0.1px 0.1px 3px;
+}
+
+.siReCaPicture {
+  /* border: solid rgb(143, 75, 75) 1px; */
+  padding-right: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.siReCaText {
+  /* border: solid rgb(51, 165, 36) 1px; */
+  width: 70%;
+  padding: 3rem 3rem;
+  padding-right: 0;
+  color: #361e12;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.siReCaTabPanel {
+  width: 20rem;
+  font-size: large;
+  line-height: 2rem;
+  margin-bottom: 2rem;
+}
+
+.siReCaTabPanel > ul {
+  /* border: #361e12 solid 1px; */
+  padding-left: 1.2rem;
+  margin-top: 2rem;
+  list-style: none;
+}
+
+.siReCaTabPanel > ul > li {
+  text-align: center;
+  font-weight: 600;
+}
+
+.siReCaImg {
+  height: 25rem;
+  width: auto;
+  border: solid 3px #361e12;
+  border-radius: 5%;
+}
+
+.siReCaTabP {
+  width: 20rem;
+  font-size: large;
+}
+
+.react-tabs__tab--selected {
+  background-color: #aa733b7e;
+}
+
+.react-tabs__tab {
+  border: rgba(28, 59, 32, 0.507) solid 1px;
+  border-radius: 30px;
+  padding: 0.2rem;
+}
+
+.react-tabs__tab-list {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  font-size: large;
+  font-weight: 500;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.StepList {
+  margin: 1rem 0;
+  line-height: 1.2rem;
 }
