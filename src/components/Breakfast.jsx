@@ -7,13 +7,18 @@ import { NavLink } from "react-router-dom";
 import NavCategory from "./NavCategory";
 import { RecipesContext } from "../context/RecipesContext";
 
-function AllRecipes() {
+function Breakfast() {
   const recipes = useContext(RecipesContext);
+  const breakfastRecipes = recipes.filter(
+    (recipe) => recipe.fields.category === "Breakfast"
+  );
+
+  console.log(breakfastRecipes);
 
   return (
     <>
       <div className="AllCardsContainer">
-        {recipes.map((recipe) => (
+        {breakfastRecipes.map((recipe) => (
           <div key={recipe.sys.id} className="CardContainer">
             <div className="CardHeader">
               <img
@@ -43,21 +48,8 @@ function AllRecipes() {
           </div>
         ))}
       </div>
-      {/* <p>test</p> */}
     </>
   );
 }
 
-export default AllRecipes;
-
-// TO DO
-//_________________________________________
-//                                         |
-// we need prep time for recipes          ✓|
-// remove alternative names from title    ✓|
-// add description                        ✓|
-// format instructions and ingredients    ✓|
-// set up useContext                       |
-// set up useParams                        |
-// set up Single Recipes                   |
-//_________________________________________|
+export default Breakfast;
