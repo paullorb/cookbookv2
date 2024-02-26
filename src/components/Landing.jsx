@@ -1,4 +1,4 @@
-import { useState, useEffect, useEffect } from "react";
+import { useState, useEffect } from "react";
 import style from './Favorite.module.css';
 import { createClient } from "contentful";
 
