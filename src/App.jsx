@@ -38,6 +38,7 @@ function App() {
       <Navbar />
       <NavCategory />
       <Routes>
+        <Route path="/" element={<Favorite />} />
         <Route path="/AllRecipes" element={<AllRecipes />} />
         <Route path="/Searched/:query" element={<Searched />} />
         <Route path="/Breakfast" element={<Breakfast />} />
@@ -45,7 +46,7 @@ function App() {
         <Route path="/Dinner" element={<Dinner />} />
         <Route path="/Dessert" element={<Desserts />} />
       </Routes>
-      <Favorite />
+
       <Footer />
     </>
   );
