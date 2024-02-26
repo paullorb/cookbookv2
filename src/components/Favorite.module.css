@@ -1,13 +1,14 @@
 .container {
   font-family: sans-serif;
   height: 80svh;
-  border: 3px solid red;
+  /* border: 3px solid red; */
   background-color: white;
   display: flex;
   flex-direction: row;
   padding: 3%;
   font-weight: 100;
   gap: 5%;
+  margin: 3rem 0;
 }
 
 .imageContainer {

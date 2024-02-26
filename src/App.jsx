@@ -8,7 +8,7 @@ import NavCategory from "./components/NavCategory";
 import AllRecipes from "./components/AllRecipes";
 import Footer from "./components/Footer";
 import Searched from "./components/Searched";
-import Favorite from "./components/Favorite";
+import Landing from "./components/Landing";
 import "./App.css";
 import Breakfast from "./components/Breakfast";
 import Lunch from "./components/Lunch";
@@ -38,14 +38,14 @@ function App() {
       <Navbar />
       <NavCategory />
       <Routes>
-        <Route path="/AllRecipes" element={<AllRecipes />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="AllRecipes" element={<AllRecipes />} />
         <Route path="/Searched/:query" element={<Searched />} />
         <Route path="/Breakfast" element={<Breakfast />} />
         <Route path="/Lunch" element={<Lunch />} />
         <Route path="/Dinner" element={<Dinner />} />
         <Route path="/Dessert" element={<Desserts />} />
       </Routes>
-      <Favorite />
       <Footer />
     </>
   );
