@@ -10,6 +10,8 @@ import AllRecipes from "./components/AllRecipes";
 import Footer from "./components/Footer";
 import Searched from "./components/Searched";
 import Favorite from "./components/Favorite";
+import About from "./pages/About";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   const [recipes, setRecipes] = useState([]);
@@ -32,12 +34,13 @@ function App() {
   return (
     <>
       <Navbar />
-      <h1>Cookbookv2</h1>
-      <br />
+
       <NavCategory />
       <Routes>
         <Route path="/AllRecipes" element={<AllRecipes />} />
         <Route path="/Searched/:query" element={<Searched />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<ContactUs />} />
       </Routes>
       <Favorite />
       <Footer />

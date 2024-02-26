@@ -1,6 +1,5 @@
 import styles from "./Logo.module.css";
 import React from "react";
-import { FaInstagram, FaYoutube, FaPinterest, FaTwitter } from "react-icons/fa";
 
 const Logo = () => {
   return (
