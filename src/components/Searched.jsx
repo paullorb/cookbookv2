@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { createClient } from "contentful";
+import "../App.css";
 
 const Searched = () => {
   const { query } = useParams();
@@ -29,13 +30,26 @@ const Searched = () => {
   }, [client, query]);
 
   return (
-    <div>
-      <h1>Search Results</h1>
-      <ul>
-        {results.map((item) => (
-          <li key={item.sys.id}>{item.fields.recipeTitle}</li>
-        ))}
-      </ul>
+    <div className="AllCardsContainer">
+      {results.map((recipe) => (
+        <div key={recipe.sys.id} className="CardContainer">
+          <div className="CardHeader">
+            <img
+              className="CardHeaderImg"
+              src={recipe.fields.recipePicture.fields.file.url}
+              alt={recipe.fields.recipePicture.fields.file.fileName}
+            />
+            <div className="CardText">
+              <h3 className="CardHeaderTitle">{recipe.fields.recipeTitle}</h3>
+              <p>Description</p>
+              <div className="CardTextInfo">
+                <h5>PrepTime</h5>
+                <h5>{recipe.fields.category}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
