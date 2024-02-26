@@ -51,4 +51,5 @@
   display: flex;
   justify-content: space-around;
   min-width: 160px;
+  padding-top: 1rem;
 }
