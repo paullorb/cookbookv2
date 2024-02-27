@@ -16,17 +16,22 @@ import Dinner from "./components/Dinner";
 import Desserts from "./components/Desserts";
 import SingleRecipe from "./components/SingleRecipe";
 import Favorite from "./components/Favorite";
+import About from "./pages/About";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
     <>
       <Navbar />
+
       <NavCategory />
       <Routes>
         <Route path="/" element={<Favorite />} />
         <Route path="/Searched/:query" element={<Searched />} />
         <Route path="/AllRecipes" element={<AllRecipes />} />
         <Route path="/AllRecipes/:id" element={<SingleRecipe />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<ContactUs />} />
         <Route path="/Breakfast" element={<Breakfast />} />
         <Route path="/Lunch" element={<Lunch />} />
         <Route path="/Dinner" element={<Dinner />} />
