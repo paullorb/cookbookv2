@@ -14,18 +14,33 @@ import Breakfast from "./components/Breakfast";
 import Lunch from "./components/Lunch";
 import Dinner from "./components/Dinner";
 import Desserts from "./components/Desserts";
-import SingleRecipe from "./components/SingleRecipe";
 
 function App() {
+  // const [recipes, setRecipes] = useState([]);
+
+  // const client = createClient({
+  //   space: "mwoz8j7lspjq",
+  //   accessToken: "7d4TEO9tdvluAn_KIRYM_jcoyDImg9rZcuS4HxrGbuc",
+  // });
+
+  // useEffect(() => {
+  //   const getRecipes = async () => {
+  //     const entryItems = await client.getEntries();
+  //     setRecipes(entryItems.items);
+  //     console.log(entryItems.items);
+  //   };
+
+  //   getRecipes();
+  // }, []);
+
   return (
     <>
       <Navbar />
       <NavCategory />
       <Routes>
         <Route path="/" element={<Favorite />} />
-        <Route path="/Searched/:query" element={<Searched />} />
         <Route path="/AllRecipes" element={<AllRecipes />} />
-        <Route path="/AllRecipes/:id" element={<SingleRecipe />} />
+        <Route path="/Searched/:query" element={<Searched />} />
         <Route path="/Breakfast" element={<Breakfast />} />
         <Route path="/Lunch" element={<Lunch />} />
         <Route path="/Dinner" element={<Dinner />} />
