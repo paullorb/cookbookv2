@@ -14,36 +14,22 @@ import Breakfast from "./components/Breakfast";
 import Lunch from "./components/Lunch";
 import Dinner from "./components/Dinner";
 import Desserts from "./components/Desserts";
+import SingleRecipe from "./components/SingleRecipe";
+import Favorite from "./components/Favorite";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 
 function App() {
-  // const [recipes, setRecipes] = useState([]);
-
-  // const client = createClient({
-  //   space: "mwoz8j7lspjq",
-  //   accessToken: "7d4TEO9tdvluAn_KIRYM_jcoyDImg9rZcuS4HxrGbuc",
-  // });
-
-  // useEffect(() => {
-  //   const getRecipes = async () => {
-  //     const entryItems = await client.getEntries();
-  //     setRecipes(entryItems.items);
-  //     console.log(entryItems.items);
-  //   };
-
-  //   getRecipes();
-  // }, []);
-
   return (
     <>
       <Navbar />
 
       <NavCategory />
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="AllRecipes" element={<AllRecipes />} />
+        <Route path="/" element={<Favorite />} />
         <Route path="/Searched/:query" element={<Searched />} />
+        <Route path="/AllRecipes" element={<AllRecipes />} />
+        <Route path="/AllRecipes/:id" element={<SingleRecipe />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<ContactUs />} />
         <Route path="/Breakfast" element={<Breakfast />} />
@@ -51,6 +37,7 @@ function App() {
         <Route path="/Dinner" element={<Dinner />} />
         <Route path="/Dessert" element={<Desserts />} />
       </Routes>
+
       <Footer />
     </>
   );
