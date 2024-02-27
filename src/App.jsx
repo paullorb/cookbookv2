@@ -8,7 +8,7 @@ import NavCategory from "./components/NavCategory";
 import AllRecipes from "./components/AllRecipes";
 import Footer from "./components/Footer";
 import Searched from "./components/Searched";
-import Favorite from "./components/Favorite";
+import Landing from "./components/Landing";
 import "./App.css";
 import Breakfast from "./components/Breakfast";
 import Lunch from "./components/Lunch";
