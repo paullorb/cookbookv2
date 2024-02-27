@@ -15,6 +15,7 @@ import Lunch from "./components/Lunch";
 import Dinner from "./components/Dinner";
 import Desserts from "./components/Desserts";
 import SingleRecipe from "./components/SingleRecipe";
+import Favorite from "./components/Favorite";
 
 function App() {
   return (
