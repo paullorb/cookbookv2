@@ -14,6 +14,8 @@ import Breakfast from "./components/Breakfast";
 import Lunch from "./components/Lunch";
 import Dinner from "./components/Dinner";
 import Desserts from "./components/Desserts";
+import About from "./pages/About";
+import ContactUs from "./pages/ContactUs";
 
 function App() {
   // const [recipes, setRecipes] = useState([]);
@@ -36,11 +38,14 @@ function App() {
   return (
     <>
       <Navbar />
+
       <NavCategory />
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="AllRecipes" element={<AllRecipes />} />
         <Route path="/Searched/:query" element={<Searched />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<ContactUs />} />
         <Route path="/Breakfast" element={<Breakfast />} />
         <Route path="/Lunch" element={<Lunch />} />
         <Route path="/Dinner" element={<Dinner />} />

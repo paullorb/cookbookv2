@@ -1,18 +1,19 @@
 import React from "react";
 import styles from "./RightNav.module.css";
 import { FaInstagram, FaYoutube, FaPinterest, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const RightNav = () => {
   return (
     <nav className={`${styles.rightNav}`}>
       <div className={`${styles.AnchorTag}`}>
-        <a href="">Recepie</a>
+        <Link to="/AllRecipes">Recepie</Link>
       </div>
       <div className={`${styles.AnchorTag}`}>
-        <a href="">About</a>
+        <Link to="/About">About</Link>
       </div>
       <div className={`${styles.AnchorTag}`}>
-        <a href="">Contact</a>
+        <Link to="/Contact">Contact</Link>
       </div>
       <div className={`${styles.socialLinksWrapper}`}>
         <a href="">
@@ -22,7 +23,6 @@ const RightNav = () => {
         <a href="">
           <FaYoutube />
         </a>
-
         <a href="">
           <FaPinterest />
         </a>
