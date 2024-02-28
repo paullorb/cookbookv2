@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import style from './Landing.module.css';
 import { RecipesContext } from "../context/RecipesContext";
+import Newsletter from "./Newsletter";
 
 function Landing() {
 
@@ -12,6 +13,7 @@ function Landing() {
   const favRecipeDescription = recipes?.[randomNumber]?.fields?.description || 'Loading recipe description...';
   
   return (
+    <>
     <section className={style.container}>
       <div className={style.imageContainer}>
         {favRecipePicture !== 'Loading recipe picture...' ? (
@@ -27,6 +29,8 @@ function Landing() {
         <button>View recipe</button>
       </div>
     </section>
+    <Newsletter />
+    </>
   );
 }
 export default Landing;
