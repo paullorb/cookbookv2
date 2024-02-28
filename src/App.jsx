@@ -15,7 +15,6 @@ import Lunch from "./components/Lunch";
 import Dinner from "./components/Dinner";
 import Desserts from "./components/Desserts";
 import SingleRecipe from "./components/SingleRecipe";
-import Favorite from "./components/Favorite";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 
@@ -26,7 +25,7 @@ function App() {
 
       <NavCategory />
       <Routes>
-        <Route path="/" element={<Favorite />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/Searched/:query" element={<Searched />} />
         <Route path="/AllRecipes" element={<AllRecipes />} />
         <Route path="/AllRecipes/:id" element={<SingleRecipe />} />
