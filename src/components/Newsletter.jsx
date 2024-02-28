@@ -3,7 +3,7 @@ import style from './Newsletter.module.css';
 function Newsletter () {
   return (
     <section className={style.Newsletter}>
-      <h2>Sign up for my weekly newsletter!</h2>
+      <h2>Get recipes straight to your inbox!</h2>
       <p>Weekly emails with my latest recipes, cooking tips and tricks and product recommendations!</p>
       <form className={style.newsForm}>
         <input type="text" id="name" name="name" placeholder="Name" required />
