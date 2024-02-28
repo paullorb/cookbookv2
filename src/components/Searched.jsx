@@ -12,6 +12,14 @@ const Searched = () => {
     accessToken: "7d4TEO9tdvluAn_KIRYM_jcoyDImg9rZcuS4HxrGbuc",
   });
 
+  const myColors = ["#bed0e8", "#e5e8be", "#e8c1be", "#bee8d6", "#d6bee8"];
+
+  const getRandomColor = (() => {
+    const randomIndex = Math.floor(Math.random() * myColors.length);
+    const randomColor = myColors[randomIndex];
+    return () => randomColor;
+  })();
+
   useEffect(() => {
     const fetchEntries = async () => {
       try {
@@ -34,7 +42,14 @@ const Searched = () => {
     <div className="AllCardsContainer">
       {results.map((recipe) => (
         <Link to={`/AllRecipes/${recipe.sys.id}`}>
-          <div key={recipe.sys.id} className="CardContainer">
+          <div
+            key={recipe.sys.id}
+            className="CardContainer"
+            style={{
+              backgroundColor: getRandomColor(),
+              transition: "2000000s",
+            }}
+          >
             <div className="CardHeader">
               <img
                 className="CardHeaderImg"

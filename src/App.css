@@ -19,7 +19,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #bed0e8;
   border-radius: 30px;
 }
 
@@ -35,8 +34,8 @@
 .CardHeaderImg {
   width: 150px;
   height: 150px;
-  border-radius: 50%;
-  border: solid 3px #361e12;
+  border-radius: 30px;
+  border: solid 1px #361e12;
   align-self: center;
 }
 
@@ -106,23 +105,27 @@
 .CatNavBar {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  padding-bottom: 1rem;
 }
 
 .CatNavBar > a {
-  border: 1px solid #361e1267;
+  border: 2px solid #00000067;
   border-radius: 30px;
-  background-color: #361e1267;
   padding: 0.2rem 0.4rem;
   padding-top: 0.3rem;
   font-weight: 600;
   text-decoration: none;
-  color: #361e12;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
+  transition: 0.2s;
 }
 
 .active {
-  background-color: #aa723b;
+  position: static;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px -1px 3px black;
+  box-shadow: 2px 3px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .siReCaTitle {
@@ -134,16 +137,21 @@
 }
 
 .singleRecipeTitleCardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border: solid 3px #361e12;
   background-color: #95745b80;
   padding: 7rem 10rem;
   border-radius: 30px;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .singleRecipeCardContainer {
+  height: auto;
   display: flex;
-  padding: 0rem 10rem;
+  margin-top: 1rem;
+  padding: 0rem 8rem;
   border-radius: 30px;
   text-shadow: rgba(139, 90, 16, 0.5) 0.1px 0.1px 3px;
 }
@@ -153,24 +161,26 @@
   padding-right: 5rem;
   display: flex;
   align-items: center;
+  position: static;
+  max-height: 400px;
 }
 
 .siReCaText {
   /* border: solid rgb(51, 165, 36) 1px; */
   width: 70%;
-  padding: 3rem 3rem;
+  padding: 0 3rem;
   padding-right: 0;
   color: #361e12;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
 }
 
 .siReCaTabPanel {
-  width: 20rem;
+  width: 30rem;
   font-size: large;
   line-height: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .siReCaTabPanel > ul {
@@ -190,21 +200,28 @@
   width: auto;
   border: solid 3px #361e12;
   border-radius: 5%;
+  position: static;
 }
 
 .siReCaTabP {
-  width: 20rem;
+  width: 30rem;
   font-size: large;
 }
 
 .react-tabs__tab--selected {
-  background-color: #aa733b7e;
+  background-color: #ffffff56;
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+  box-shadow: 2px 3px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .react-tabs__tab {
-  border: rgba(28, 59, 32, 0.507) solid 1px;
+  border: rgb(0, 0, 0) solid 1px;
   border-radius: 30px;
-  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  color: black;
+  padding: 0.5rem;
 }
 
 .react-tabs__tab-list {
