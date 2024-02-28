@@ -9,13 +9,23 @@ import { RecipesContext } from "../context/RecipesContext";
 
 function AllRecipes() {
   const recipes = useContext(RecipesContext);
+  const myColors = ["#bed0e8", "#e5e8be", "#e8c1be", "#bee8d6", "#d6bee8"];
+
+  const getRandomColor = () => {
+    const randomIndex = Math.floor(Math.random() * myColors.length);
+    return myColors[randomIndex];
+  };
 
   return (
     <>
       <div className="AllCardsContainer">
         {recipes.map((recipe) => (
           <Link key={recipe.sys.id} to={`/AllRecipes/${recipe.sys.id}`}>
-            <div key={recipe.sys.id} className="CardContainer">
+            <div
+              key={recipe.sys.id}
+              className="CardContainer"
+              style={{ backgroundColor: getRandomColor() }}
+            >
               <div className="CardHeader">
                 <img
                   className="CardHeaderImg"

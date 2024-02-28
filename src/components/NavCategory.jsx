@@ -5,10 +5,27 @@ export default function NavCategory() {
   return (
     <nav className="CatNavBar">
       <NavLink to="AllRecipes">All Recipes</NavLink>
-      <NavLink to="Breakfast">Breakfast</NavLink>
-      <NavLink to="Lunch">Lunch</NavLink>
-      <NavLink to="Dinner">Dinner</NavLink>
-      <NavLink to="Dessert">Dessert</NavLink>
+      <NavLink
+        to="Breakfast"
+        style={{ backgroundColor: "rgba(195, 0, 255, 0.5)" }}
+      >
+        Breakfast
+      </NavLink>
+      <NavLink to="Lunch" style={{ backgroundColor: "rgba(0, 255, 255, 0.5)" }}>
+        Lunch
+      </NavLink>
+      <NavLink
+        to="Dinner"
+        style={{ backgroundColor: "rgba(46, 139, 86, 0.5)" }}
+      >
+        Dinner
+      </NavLink>
+      <NavLink
+        to="Dessert"
+        style={{ backgroundColor: "rgba(236, 232, 10, 0.5)" }}
+      >
+        Dessert
+      </NavLink>
     </nav>
   );
 }
