@@ -7,7 +7,7 @@ const RightNav = () => {
   return (
     <nav className={`${styles.rightNav}`}>
       <div className={`${styles.AnchorTag}`}>
-        <Link to="/AllRecipes">Recepie</Link>
+        <Link to="/AllRecipes">Recipe's</Link>
       </div>
       <div className={`${styles.AnchorTag}`}>
         <Link to="/About">About</Link>

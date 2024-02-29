@@ -9,6 +9,8 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 0 5rem;
+  min-height: 60vh;
+  align-items: center;
 }
 
 .CardContainer {

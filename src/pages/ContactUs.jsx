@@ -13,7 +13,7 @@ const ContactUs = () => {
           <div className={`${styles.fieldBlock}`}>
             <label
               className={`${styles.fieldLabel}`}
-              for="name"
+              htmlFor="name"
               class="field-label"
             >
               Name
@@ -29,7 +29,7 @@ const ContactUs = () => {
           <div className={`${styles.fieldBlock}`}>
             <label
               className={`${styles.fieldLabel}`}
-              for="name"
+              htmlFor="name"
               class="field-label"
             >
               E-MAIL
@@ -45,7 +45,7 @@ const ContactUs = () => {
           <div className={`${styles.fieldBlock}`}>
             <label
               className={`${styles.fieldLabel}`}
-              for="name"
+              htmlFor="name"
               class="field-label"
             >
               message

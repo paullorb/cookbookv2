@@ -1,14 +1,15 @@
 .container {
   font-family: sans-serif;
-  height: 80svh;
+  height: 68svh;
   /* border: 3px solid red; */
-  background-color: white;
+  background-color: #e8d6be;
   display: flex;
   flex-direction: row;
-  padding: 3%;
+  padding: 0 3%;
   font-weight: 100;
   gap: 5%;
-  margin: 3rem 0;
+  margin: 1rem 0;
+  margin-bottom: 4rem;
 }
 
 .imageContainer {
@@ -53,7 +54,7 @@
   margin: 3rem 0;
 }
 
-.textContainer button {
+.textContainer a {
   padding: 1rem 2rem;
   font-size: 1.1rem;
   border: 1px solid #95745b;
@@ -62,9 +63,10 @@
   margin-right: 60%;
   border-radius: 10px;
   opacity: 0.8;
+  text-align: center;
 }
 
-.textContainer button:hover {
+.textContainer a:hover {
   background-color: #95745b;
   color: white;
   opacity: 1;
