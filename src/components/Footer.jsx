@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import { FaInstagram, FaYoutube, FaPinterest, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -42,15 +43,20 @@ const Footer = () => {
         <div className={styles.frightSection}>
           <div className={styles.flinksColumn}>
             <p className={styles.fpexploreadmin}>EXPLORE</p>
-            <a href="#" className={styles.flink}>
+
+            <Link to="/AllRecipes" className={styles.flink}>
+              {" "}
               Recipes
-            </a>
-            <a href="#" className={styles.flink}>
+            </Link>
+
+            <Link to="/About" className={styles.flink}>
+              {" "}
               About
-            </a>
-            <a href="#" className={styles.flink}>
+            </Link>
+            <Link to="/contact" className={styles.flink}>
+              {" "}
               Contact
-            </a>
+            </Link>
           </div>
           <div className={styles.flinksColumn}>
             <p className={styles.fpexploreadmin}>ADMIN</p>
