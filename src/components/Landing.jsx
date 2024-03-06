@@ -8,19 +8,6 @@ import { Link } from "react-router-dom";
 function Landing() {
   const recipes = useContext(RecipesContext);
 
-  const fetchAPI = () => {
-    try {
-      fetch("http://localhost:3000")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-    } catch (error) {
-      console.error("Error fetching recipes:", error);
-    }};
-
-    useEffect(() => {
-      fetchAPI();
-    } , []);
-
   const randomNumber =
     recipes.length > 0 ? Math.floor(Math.random() * recipes.length) : 0;
   const favRecipeTitle =
