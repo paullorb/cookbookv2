@@ -2,6 +2,7 @@ import { useContext } from "react";
 import style from "./Landing.module.css";
 import { RecipesContext } from "../context/RecipesContext";
 import Newsletter from "./Newsletter";
+import LatestRecipes from "./LatestRecipes";
 import { Link } from "react-router-dom";
 
 function Landing() {
@@ -40,6 +41,7 @@ function Landing() {
         </div>
       </section>
       <Newsletter />
+      <LatestRecipes />
     </>
   );
 }
