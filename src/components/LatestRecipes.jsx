@@ -1,6 +1,3 @@
-
-
-
 function LatestRecipes () {
   return (
     <section>
