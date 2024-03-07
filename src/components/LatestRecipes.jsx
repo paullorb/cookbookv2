@@ -1,19 +1,19 @@
 import { useEffect } from "react";
 
-function LatestRecipes () {
-
+function LatestRecipes() {
   const fetchAPI = () => {
     try {
       fetch("http://localhost:3000")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+        .then((response) => response.json())
+        .then((data) => console.log(data));
     } catch (error) {
       console.error("Error fetching recipes:", error);
-    }};
+    }
+  };
 
-    useEffect(() => {
-      fetchAPI();
-    } , []);
+  useEffect(() => {
+    fetchAPI();
+  }, []);
 
   return (
     <section>

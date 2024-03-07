@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 import { FaSearch } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   const [input, setInput] = useState("");
-  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate("/searched/" + input);
   };
 
   return (
@@ -21,7 +19,9 @@ const SearchBar = () => {
           type="text"
           value={input}
         />
-        <FaSearch />
+        <Link to={`/AllRecipes/searched/${input}`}>
+          <FaSearch />
+        </Link>
       </form>
     </div>
   );
