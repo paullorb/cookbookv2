@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 //---BASE-------------------------------------------------------------------------
 //DOTENV
 const dotenv = require("dotenv");
@@ -40,7 +41,7 @@ app.get("/", (req, res) => {
       const randomNumber = Math.floor(Math.random() * result.rows.length);
       res.status(200).json(result.rows[randomNumber]);
       res.end();
-      console.log("hier bin ich");
+      // console.log("hier warst du");
     }
   });
 });
