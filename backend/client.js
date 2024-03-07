@@ -79,7 +79,7 @@ app.get("/AllRecipes/searched/:query", async (req, res) => {
   }
 });
 
-//all BREAKFAST 'Breakfast'
+//all BREAKFAST
 app.get("/Breakfast", (req, res) => {
   client
     .query("SELECT * FROM recipes WHERE category = 'Breakfast'")
@@ -95,7 +95,39 @@ app.get("/Breakfast", (req, res) => {
     });
 });
 
-//all DINNER 'Breakfast'
+//all DESSERT
+app.get("/Dessert", (req, res) => {
+  client
+    .query("SELECT * FROM recipes WHERE category = 'Dessert'")
+    .then((data) => {
+      const recipes = data.rows;
+      res.status(200).json(recipes);
+      console.log("TEST 1", recipes);
+    })
+    .catch((e) => {
+      console.log(e);
+      res.status(500).send("Sorry, something went wrong");
+      res.end();
+    });
+});
+
+//all LUNCH
+app.get("/Lunch", (req, res) => {
+  client
+    .query("SELECT * FROM recipes WHERE category = 'Lunch'")
+    .then((data) => {
+      const recipes = data.rows;
+      res.status(200).json(recipes);
+      console.log("TEST 1", recipes);
+    })
+    .catch((e) => {
+      console.log(e);
+      res.status(500).send("Sorry, something went wrong");
+      res.end();
+    });
+});
+
+//all DINNER
 app.get("/Dinner", (req, res) => {
   client
     .query("SELECT * FROM recipes WHERE category = 'Dinner'")
