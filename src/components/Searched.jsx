@@ -5,12 +5,7 @@ import "../App.css";
 import { NavLink, Link } from "react-router-dom";
 
 const Searched = () => {
-  const { query } = useParams();
   const [results, setResults] = useState([]);
-  const client = createClient({
-    space: "mwoz8j7lspjq",
-    accessToken: "7d4TEO9tdvluAn_KIRYM_jcoyDImg9rZcuS4HxrGbuc",
-  });
 
   const myColors = ["#bed0e8", "#e5e8be", "#e8c1be", "#bee8d6", "#d6bee8"];
 
@@ -20,30 +15,36 @@ const Searched = () => {
     return () => randomColor;
   })();
 
-  useEffect(() => {
-    const fetchEntries = async () => {
-      try {
-        const response = await client.getEntries({
-          content_type: "recipes",
-          query: query,
-        });
-        setResults(response.items);
-      } catch (error) {
-        console.error("Error searching Contentful:", error);
-      }
-    };
+  const { query } = useParams();
 
-    if (query) {
-      fetchEntries();
+  let [SearchedRecipes, setSearchedRecipes] = useState(["Loading recipes..."]);
+
+  const fetchAPI = async () => {
+    try {
+      const response = await fetch(
+        `http://localhost:3000/AllRecipes/searched/${query}`
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      console.log(data);
+      setSearchedRecipes(data);
+    } catch (error) {
+      console.error("Error fetching recipes:", error);
     }
-  }, [client, query]);
+  };
+
+  useEffect(() => {
+    fetchAPI();
+  }, []);
 
   return (
     <div className="AllCardsContainer">
-      {results.map((recipe) => (
-        <Link to={`/AllRecipes/${recipe.sys.id}`}>
+      {SearchedRecipes.map((recipe) => (
+        <Link to={`/AllRecipes/${recipe.id}`}>
           <div
-            key={recipe.sys.id}
+            key={recipe.id}
             className="CardContainer"
             style={{
               backgroundColor: getRandomColor(),
@@ -53,15 +54,15 @@ const Searched = () => {
             <div className="CardHeader">
               <img
                 className="CardHeaderImg"
-                src={recipe.fields.recipePicture.fields.file.url}
-                alt={recipe.fields.recipePicture.fields.file.fileName}
+                src={recipe.picture_url}
+                alt={recipe.recipetitle}
               />
               <div className="CardText">
-                <h3 className="CardHeaderTitle">{recipe.fields.recipeTitle}</h3>
+                <h3 className="CardHeaderTitle">{recipe.recipetitle}</h3>
                 <p>Description</p>
                 <div className="CardTextInfo">
                   <h5>PrepTime</h5>
-                  <h5>{recipe.fields.category}</h5>
+                  <h5>{recipe.category}</h5>
                 </div>
               </div>
             </div>

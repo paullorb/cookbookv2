@@ -26,7 +26,7 @@ function App() {
       <NavCategory />
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/Searched/:query" element={<Searched />} />
+        <Route path="/AllRecipes/searched/:query" element={<Searched />} />
         <Route path="/AllRecipes" element={<AllRecipes />} />
         <Route path="/AllRecipes/:id" element={<SingleRecipe />} />
         <Route path="/About" element={<About />} />

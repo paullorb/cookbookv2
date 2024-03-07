@@ -8,10 +8,31 @@ import NavCategory from "./NavCategory";
 import { RecipesContext } from "../context/RecipesContext";
 
 function Breakfast() {
-  const recipes = useContext(RecipesContext);
-  const breakfastRecipes = recipes.filter(
-    (recipe) => recipe.fields.category === "Breakfast"
-  );
+  let [breakfastRecipes, setbreakfastRecipes] = useState([
+    "Loading recipes...",
+  ]);
+
+  const fetchAPI = () => {
+    try {
+      fetch("http://localhost:3000/Breakfast")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          setbreakfastRecipes(data); // Assuming `data` is an array of recipes
+        });
+    } catch (error) {
+      console.error("Error fetching recipes:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAPI();
+  }, []);
+
+  // const recipes = useContext(RecipesContext);
+  // const breakfastRecipes = recipes.filter(
+  //   (recipe) => recipe.fields.category === "Breakfast"
+  // );
   const myColors = ["#bed0e8", "#e5e8be", "#e8c1be", "#bee8d6", "#d6bee8"];
 
   const getRandomColor = () => {
@@ -25,25 +46,23 @@ function Breakfast() {
     <>
       <div className="AllCardsContainer">
         {breakfastRecipes.map((recipe) => (
-          <Link to={`/AllRecipes/${recipe.sys.id}`}>
+          <Link to={`/AllRecipes/${recipe.id}`}>
             <div
-              key={recipe.sys.id}
+              key={recipe.id}
               className="CardContainer"
               style={{ backgroundColor: getRandomColor() }}
             >
               <div className="CardHeader">
                 <img
                   className="CardHeaderImg"
-                  src={recipe.fields.recipePicture.fields.file.url}
-                  alt={recipe.fields.recipePicture.fields.file.fileName}
+                  src={recipe.picture_url}
+                  alt={recipe.recipetitle}
                 />
                 <div className="CardText">
-                  <h3 className="CardHeaderTitle">
-                    {recipe.fields.recipeTitle}
-                  </h3>
-                  <p className="CardTextP">{recipe.fields.description}</p>
+                  <h3 className="CardHeaderTitle">{recipe.recipetitle}</h3>
+                  <p className="CardTextP">{recipe.description}</p>
                   <div className="CardTextInfo">
-                    <div className="PrepTimeContainer">
+                    {/* <div className="PrepTimeContainer">
                       <img
                         src="timerbg.png"
                         style={{ height: "2rem", width: "auto" }}
@@ -51,9 +70,9 @@ function Breakfast() {
                       <h5 className="CardTextPrepTime">
                         {recipe.fields.prepTime}
                       </h5>
-                    </div>
-                    <p className={`CardCatBox${recipe.fields.category}`}>
-                      {recipe.fields.category}
+                    </div> */}
+                    <p className={`CardCatBox${recipe.category}`}>
+                      {recipe.category}
                     </p>
                   </div>
                 </div>
