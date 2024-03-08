@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
       const randomNumber = Math.floor(Math.random() * result.rows.length);
       res.status(200).json(result.rows[randomNumber]);
       res.end();
-      // console.log("hier warst du");
+      console.log("Test 0");
     }
   });
 });
@@ -66,28 +66,28 @@ app.get("/AllRecipes", (req, res) => {
 app.get("/AllRecipes/searched/:query", async (req, res) => {
   try {
     const { query: Mquery } = req.params;
-    console.log("Received search query:", Mquery); // Add this line
+    console.log("RAFF DOCH DU HURENSOHN");
+    console.log("Received search query:", Mquery);
     const data = await client.query(
       "SELECT * FROM recipes WHERE recipetitle ILIKE $1 ",
       [`%${Mquery}%`]
     );
-    console.log(data);
+    console.log("JUNGE JA");
     res.json(data.rows);
-    res.end();
   } catch (e) {
     console.log(e);
     res.sendStatus(500);
   }
 });
 
-//all BREAKFAST 'Breakfast'
+//all BREAKFAST
 app.get("/Breakfast", (req, res) => {
   client
     .query("SELECT * FROM recipes WHERE category = 'Breakfast'")
     .then((data) => {
       const recipes = data.rows;
       res.status(200).json(recipes);
-      console.log("TEST 1", recipes);
+      console.log("TEST 2", recipes);
     })
     .catch((e) => {
       console.log(e);
@@ -96,20 +96,67 @@ app.get("/Breakfast", (req, res) => {
     });
 });
 
-//all DINNER 'Breakfast'
-app.get("/Dinner", (req, res) => {
+//all DESSERT
+app.get("/Dessert", (req, res) => {
   client
-    .query("SELECT * FROM recipes WHERE category = 'Dinner'")
+    .query("SELECT * FROM recipes WHERE category = 'Dessert'")
     .then((data) => {
       const recipes = data.rows;
       res.status(200).json(recipes);
-      console.log("TEST 1", recipes);
+      console.log("TEST 3", recipes);
     })
     .catch((e) => {
       console.log(e);
       res.status(500).send("Sorry, something went wrong");
       res.end();
     });
+});
+
+//all LUNCH
+app.get("/Lunch", (req, res) => {
+  client
+    .query("SELECT * FROM recipes WHERE category = 'Lunch'")
+    .then((data) => {
+      const recipes = data.rows;
+      res.status(200).json(recipes);
+      console.log("TEST 4", recipes);
+    })
+    .catch((e) => {
+      console.log(e);
+      res.status(500).send("Sorry, something went wrong");
+      res.end();
+    });
+});
+
+//all DINNER
+app.get("/Dinner", (req, res) => {
+  client
+    .query("SELECT * FROM recipes WHERE category = 'Dinner'")
+    .then((data) => {
+      const recipes = data.rows;
+      res.status(200).json(recipes);
+      console.log("TEST 5", recipes);
+    })
+    .catch((e) => {
+      console.log(e);
+      res.status(500).send("Sorry, something went wrong");
+      res.end();
+    });
+});
+
+//single Recipe
+app.get("/AllRecipes/:id", async (req, res) => {
+  try {
+    const id = req.params.id;
+    console.log("Received search query:", id);
+    const data = await client.query("SELECT * FROM recipes WHERE id = $1 ", [
+      `${id}`,
+    ]);
+    res.json(data.rows);
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
 });
 
 //---ESSENTIALS-------------------------------------------------------------------
