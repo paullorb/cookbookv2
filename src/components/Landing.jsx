@@ -28,7 +28,7 @@ function Landing() {
   const NEWfavRecipeDescription = RandomRec?.description || "Loading";
   const NEWfavRecipeID = RandomRec?.id || "Loading";
 
-  console.log(NEWfavRecipePicture);
+  // console.log(NEWfavRecipePicture);
 
   return (
     <>
