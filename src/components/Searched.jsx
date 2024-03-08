@@ -37,7 +37,7 @@ const Searched = () => {
 
   useEffect(() => {
     fetchAPI();
-  }, []);
+  }, [query]);
 
   return (
     <div className="AllCardsContainer">
@@ -59,10 +59,18 @@ const Searched = () => {
               />
               <div className="CardText">
                 <h3 className="CardHeaderTitle">{recipe.recipetitle}</h3>
-                <p>Description</p>
+                <p>{recipe.description}</p>
                 <div className="CardTextInfo">
-                  <h5>PrepTime</h5>
-                  <h5>{recipe.category}</h5>
+                  <div className="PrepTimeContainer">
+                    <img
+                      src="/timerbg.png"
+                      style={{ height: "2rem", width: "auto" }}
+                    />
+                    <h5 className="CardTextPrepTime">{recipe.preptime}</h5>
+                  </div>
+                  <p className={`CardCatBox${recipe.category}`}>
+                    {recipe.category}
+                  </p>
                 </div>
               </div>
             </div>
