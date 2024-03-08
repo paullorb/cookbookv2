@@ -6,25 +6,43 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
 function SingleRecipe() {
   const { id } = useParams();
-  console.log(id);
-  const recipes = useContext(RecipesContext);
-  const singleRecipe = recipes.filter((recipe) => recipe.sys.id === id);
+  console.log("id:", id);
 
-  console.log(singleRecipe);
+  let [singleRecipe, setsingleRecipe] = useState(["Loading recipes..."]);
+
+  const fetchAPI = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/AllRecipes/${id}`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      console.log("transmitted data:", data);
+      setsingleRecipe(data);
+    } catch (error) {
+      console.error("Error fetching recipes:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAPI();
+  }, [id]);
+
+  console.log("singleRecipe:", singleRecipe);
 
   return (
     <>
       <div className="AllCardsContainer">
         {singleRecipe.map((recipe) => (
           <>
-            <div key={recipe.sys.id} className="singleRecipeTitleCardContainer">
-              <h1 className="siReCaTitle">{recipe.fields.recipeTitle}</h1>
+            <div key={recipe.id} className="singleRecipeTitleCardContainer">
+              <h1 className="siReCaTitle">{recipe.recipetitle}</h1>
               <div className="singleRecipeCardContainer">
                 <div className="siReCaPicture">
                   <img
                     className="siReCaImg"
-                    src={recipe.fields.recipePicture.fields.file.url}
-                    alt={recipe.fields.recipePicture.fields.file.fileName}
+                    src={recipe.picture_url}
+                    alt={recipe.recipetitle}
                   />
                 </div>
                 <div className="siReCaText">
@@ -35,14 +53,10 @@ function SingleRecipe() {
                     </TabList>
 
                     <TabPanel className="siReCaTabPanel">
-                      <ul>
-                        {recipe.fields.ingredients.map((ingredient) => (
-                          <li>{ingredient}</li>
-                        ))}
-                      </ul>
+                      <p>{recipe.description}</p>
                     </TabPanel>
                     <TabPanel>
-                      <p className="siReCaTabP">{recipe.fields.instruction}</p>
+                      <p className="siReCaTabP">{recipe.instructions}</p>
                     </TabPanel>
                   </Tabs>
                 </div>
