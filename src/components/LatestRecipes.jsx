@@ -35,6 +35,9 @@ function LatestRecipes() {
           <div className={style.textContainer}>
             <p className={style.description}>{recipe.description}</p>
           </div>
+          <div className={style.textContainer}>
+            <p className={style.category}>{recipe.category}</p>
+          </div>
           <img src={recipe.picture_url} alt={recipe.recipetitle} className={style.img}/>
         </div>
 ))}
