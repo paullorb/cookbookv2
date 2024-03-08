@@ -53,7 +53,7 @@ function SingleRecipe() {
                     </TabList>
 
                     <TabPanel className="siReCaTabPanel">
-                      <p>{recipe.description}</p>
+                      <p>{recipe.ingredients}</p>
                     </TabPanel>
                     <TabPanel>
                       <p className="siReCaTabP">{recipe.instructions}</p>

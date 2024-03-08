@@ -62,15 +62,13 @@ function Breakfast() {
                   <h3 className="CardHeaderTitle">{recipe.recipetitle}</h3>
                   <p className="CardTextP">{recipe.description}</p>
                   <div className="CardTextInfo">
-                    {/* <div className="PrepTimeContainer">
+                    <div className="PrepTimeContainer">
                       <img
                         src="timerbg.png"
                         style={{ height: "2rem", width: "auto" }}
                       />
-                      <h5 className="CardTextPrepTime">
-                        {recipe.fields.prepTime}
-                      </h5>
-                    </div> */}
+                      <h5 className="CardTextPrepTime">{recipe.preptime}</h5>
+                    </div>
                     <p className={`CardCatBox${recipe.category}`}>
                       {recipe.category}
                     </p>
