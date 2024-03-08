@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 //---BASE-------------------------------------------------------------------------
 //DOTENV
 const dotenv = require("dotenv");

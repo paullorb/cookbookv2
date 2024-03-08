@@ -1,0 +1,55 @@
+.title {
+  font-family: Arial;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 8rem 5rem 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial;
+  gap: 6rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-white);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 3rem 5rem 9rem;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.recipe:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.textContainer {
+  height: 2rem;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.img {
+  width: 50%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin: 3rem 0 0;
+}
+
+.description {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  opacity: 0.7;
+}
