@@ -66,19 +66,34 @@ app.get("/AllRecipes", (req, res) => {
 app.get("/AllRecipes/searched/:query", async (req, res) => {
   try {
     const { query: Mquery } = req.params;
-    console.log("RAFF DOCH DU HURENSOHN");
     console.log("Received search query:", Mquery);
+
+    const searchPattern = `%${Mquery}%`;
     const data = await client.query(
-      "SELECT * FROM recipes WHERE recipetitle ILIKE $1 ",
-      [`%${Mquery}%`]
+      `SELECT * FROM recipes 
+       WHERE recipeTitle ILIKE $1 
+       OR description ILIKE $1
+       OR EXISTS (
+         SELECT 1 
+         FROM unnest(ingredients::text[]) AS unnestedIngredients
+         WHERE unnestedIngredients ILIKE $1
+       )
+       OR EXISTS (
+         SELECT 1 
+         FROM unnest(instructions::text[]) AS unnestedInstructions
+         WHERE unnestedInstructions ILIKE $1
+       )`,
+      [searchPattern]
     );
-    console.log("JUNGE JA");
+    console.log(data);
     res.json(data.rows);
   } catch (e) {
     console.log(e);
     res.sendStatus(500);
   }
 });
+
+
 
 //all BREAKFAST
 app.get("/Breakfast", (req, res) => {
