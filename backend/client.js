@@ -17,7 +17,8 @@ app.use(express.json());
 const cors = require("cors");
 app.use(cors());
 
-//---DB CONNECT-------------------------------------------------------------------
+//---DB CONNECT (EXPRESS)---------------------------------------------------------
+
 const client = new Client({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -27,8 +28,6 @@ const client = new Client({
 });
 
 client.connect();
-
-//---REQUESTS---------------------------------------------------------------------
 
 //---QUERIES----------------------------------------------------------------------
 // get random single Recipe on Landing
@@ -63,6 +62,7 @@ app.get("/AllRecipes", (req, res) => {
 });
 
 //search for recipes
+//(title, description = similar) (instructions, ingredients = match)
 app.get("/AllRecipes/searched/:query", async (req, res) => {
   try {
     const { query: Mquery } = req.params;
@@ -92,8 +92,6 @@ app.get("/AllRecipes/searched/:query", async (req, res) => {
     res.sendStatus(500);
   }
 });
-
-
 
 //all BREAKFAST
 app.get("/Breakfast", (req, res) => {
@@ -168,6 +166,7 @@ app.get("/AllRecipes/:id", async (req, res) => {
       `${id}`,
     ]);
     res.json(data.rows);
+    console.log(data.rows);
   } catch (e) {
     console.log(e);
     res.sendStatus(500);
